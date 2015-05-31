@@ -6,6 +6,22 @@
 			url:'http://count.io/vb/DankStopProducts/' + productNumber + '+',
 			type: 'POST'
 		});
+		$.ajaxSetup({
+			scriptCharset: "utf-8",
+			contentType: "application/json; charset=utf-8"
+		});
+		$.getJSON('http://whateverorigin.org/get?url=' + 
+			encodeURIComponent('http://count.io/vb/DankStopProducts/' + productNumber) + '&callback=?',
+			function (data) {
+				console.log("> ", data);
+				
+				//If the expected response is text/plain
+				//$("#viewer").html(data.contents);
+				
+				//If the expected response is JSON
+				//var response = $.parseJSON(data.contents);
+		});
+/*
 		$.ajaxPrefilter( function (optionsAlt) {
 			if (optionsAlt.crossDomain && jQuery.support.cors) {
 				var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
@@ -20,6 +36,7 @@
 			    //console.log(data.counts[0].count);
 				//$("#viewer").html(response);
 		});
+*/
 /*
 		$.ajax({
 			url:'http://count.io/vb/DankStopProducts/' + productNumber,
