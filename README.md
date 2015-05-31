@@ -28,9 +28,9 @@ BigCommerce Hot Item Product Counter
 
 ##Resources
 - [Is it possible to use JavaScript to track how many page views in past 24 hours?](http://stackoverflow.com/questions/30474029/is-it-possible-to-use-javascript-to-track-how-many-page-views-in-past-24-hours/30475170#30475170)
-- []()
-- []()
-- []()
+- [JSONP cross origin error 'No Access-Control-Allow-Origin header is present'](http://stackoverflow.com/questions/20518653/jsonp-cross-origin-error-no-access-control-allow-origin-header-is-present)
+- [JSONP returning “Uncaught SyntaxError: Unexpected token :” [duplicate]](http://stackoverflow.com/questions/23556996/jsonp-returning-uncaught-syntaxerror-unexpected-token)
+- [jQuery.ajax()](http://api.jquery.com/jquery.ajax/)
 - []()
 - []()
 - []()
