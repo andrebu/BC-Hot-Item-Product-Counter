@@ -7,7 +7,7 @@
 			type: 'POST'
 		});
 		$.ajax({
-			url:'http://count.io/vb/products/' + productNumber,
+			url:'http://count.io/vb/products/' + productNumber + '?callback=?',
 	        type: 'GET',
 	        dataType: 'jsonp',
 			success: function(data) {
