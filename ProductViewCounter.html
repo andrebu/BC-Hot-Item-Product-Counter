@@ -6,18 +6,34 @@
 			url:'http://count.io/vb/DankStopProducts/' + productNumber + '+',
 			type: 'POST'
 		});
+		$.ajaxPrefilter( function (optionsAlt) {
+			if (optionsAlt.crossDomain && jQuery.support.cors) {
+				var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+				optionsAlt.url = http + '//cors-anywhere.herokuapp.com/' + optionsAlt.url;
+				//optionsAlt.url = "http://cors.corsproxy.io/url=" + options.url;
+			}
+		});
+		$.get(
+			'http://count.io/vb/DankStopProducts/' + productNumber,
+			function (data) {
+				console.log(data.count);
+			    //console.log(data.counts[0].count);
+				//$("#viewer").html(response);
+		});
+/*
 		$.ajax({
 			url:'http://count.io/vb/DankStopProducts/' + productNumber,
 	        type: 'POST',
 	        //data: 'data',
 			//crossDomain: true,
-			//dataType: 'jsonp',
+			dataType: 'jsonp',
 			//jsonp: 'jsonp',
 	        //jsonCallback: 'parseResponse',
 			success: function(data) {
 			    console.log(data.counts[0].count);
 			}
 		});
+*/
 	}
 	prodViewCount();
 </script>
