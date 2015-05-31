@@ -3,13 +3,17 @@
 	function prodViewCount() {
         var productNumber = $('#productDetailsAddToCartForm').find('input[name=product_id]').attr('value');
 		$.ajax({
-			url:'http://count.io/vb/products/' + productNumber + '+',
+			url:'http://count.io/vb/DankStopProducts/' + productNumber + '+',
 			type: 'POST'
 		});
 		$.ajax({
-			url:'http://count.io/vb/products/' + productNumber + '?callback=?',
-	        type: 'GET',
-	        dataType: 'jsonp',
+			url:'http://count.io/vb/DankStopProducts/' + productNumber,
+	        type: 'POST',
+	        //data: 'data',
+			//crossDomain: true,
+			//dataType: 'jsonp',
+			//jsonp: 'jsonp',
+	        //jsonCallback: 'parseResponse',
 			success: function(data) {
 			    console.log(data.counts[0].count);
 			}
