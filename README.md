@@ -35,7 +35,7 @@ BigCommerce Hot Item Product Counter
 - [JQuery AJAX CORs error](http://stackoverflow.com/questions/28391603/jquery-ajax-cors-error)
 - [jQuery AJAX cross domain](http://stackoverflow.com/questions/3506208/jquery-ajax-cross-domain)
 - [Loading cross domain html page with jQuery AJAX](http://stackoverflow.com/questions/15005500/loading-cross-domain-html-page-with-jquery-ajax/17299796#17299796)
-- []()
+- [jQuery.ajaxPrefilter()](http://api.jquery.com/jquery.ajaxprefilter/)
 - []()
 - []()
 
