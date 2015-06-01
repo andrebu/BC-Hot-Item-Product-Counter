@@ -71,6 +71,7 @@ BigCommerce Hot Item Product Counter
 * [BigCommerce Category Page Sold Out Products Reorder](https://github.com/iamandrebulatov/BC-Category-Push-Sold-Out-Products-to-Bottom)
 * [BigCommerce Wholesale Price and Item Hide and Other Features](https://github.com/iamandrebulatov/BC-Wholesale-Price-and-Item-Hide)
 * [BigCommerce Sharing Savings Discount](https://github.com/iamandrebulatov/BC-Sharing-Savings-Discount)
+* [BigCommerce Tooltips](https://github.com/iamandrebulatov/BC-Tooltips)
 
 
 ------------------------------------------------------------------------------------
