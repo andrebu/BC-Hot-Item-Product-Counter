@@ -27,6 +27,7 @@ BigCommerce Hot Item Product Counter
 
 
 ##Resources
+- [Jirafe -- API Overview](https://docs.jirafe.com/api/)
 - [Is it possible to use JavaScript to track how many page views in past 24 hours?](http://stackoverflow.com/questions/30474029/is-it-possible-to-use-javascript-to-track-how-many-page-views-in-past-24-hours/30475170#30475170)
 - [JSONP cross origin error 'No Access-Control-Allow-Origin header is present'](http://stackoverflow.com/questions/20518653/jsonp-cross-origin-error-no-access-control-allow-origin-header-is-present)
 - [JSONP returning “Uncaught SyntaxError: Unexpected token :” [duplicate]](http://stackoverflow.com/questions/23556996/jsonp-returning-uncaught-syntaxerror-unexpected-token)
@@ -36,6 +37,7 @@ BigCommerce Hot Item Product Counter
 - [jQuery AJAX cross domain](http://stackoverflow.com/questions/3506208/jquery-ajax-cross-domain)
 - [Loading cross domain html page with jQuery AJAX](http://stackoverflow.com/questions/15005500/loading-cross-domain-html-page-with-jquery-ajax/17299796#17299796)
 - [jQuery.ajaxPrefilter()](http://api.jquery.com/jquery.ajaxprefilter/)
+- []()
 - []()
 - []()
 
