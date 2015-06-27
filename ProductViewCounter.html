@@ -1,15 +1,23 @@
 <script type="text/javascript">
 	//Product View Counter Function 
 	function prodViewCount() {
+
+		if (!Date.now) {
+			Date.now = function() { return new Date().getTime(); }
+		}
+		
+		var timestamp = Math.floor(Date.now());
+
         var productNumber = $('#productDetailsAddToCartForm').find('input[name=product_id]').attr('value');
 		$.ajax({
-			url:'http://count.io/vb/DankStopProducts/' + productNumber + '+',
+			url:'http://count.io/vb/DankStopProducts/' + productNumber + '/' + timestamp + '+',
 			type: 'POST'
 		});
 		var httpPrefix = (window.location.protocol === 'http:' ? 'http:' : 'https:');
 		$.post(
 			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProducts/' + productNumber,
 			function (data) {
+				console.log(data);
 				console.log(data.count);
 			    //console.log(data.counts[0].count);
 				//$("#viewer").html(response);
