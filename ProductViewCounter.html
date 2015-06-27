@@ -7,18 +7,33 @@
 		}
 		
 		var timestamp = Math.floor(Date.now());
+		var dayAgo = timestamp - 86400000;
 
         var productNumber = $('#productDetailsAddToCartForm').find('input[name=product_id]').attr('value');
 		$.ajax({
-			url:'http://count.io/vb/DankStopProducts/' + productNumber + '/' + timestamp + '+',
+			url:'http://count.io/vb/DankStopProduct' + productNumber + '/' + timestamp + '+',
 			type: 'POST'
 		});
 		var httpPrefix = (window.location.protocol === 'http:' ? 'http:' : 'https:');
 		$.post(
-			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProducts/' + productNumber,
+			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
 				console.log(data);
-				console.log(data.count);
+				console.log(data.counts);
+				console.log(data.counts[0]);
+				console.log(data.counts[0].item);
+				var timedViewCounter = 50;
+				var myStringArray = data.counts;
+				var arrayLength = myStringArray.length;
+				for (var i = 0; i < arrayLength; i++) {
+					var itemTimestamp = data.counts[i].item;
+					if (itemTimestamp > dayAgo) {
+						timedViewCounter++;
+					}
+					//alert(myStringArray[i]);
+					//Do something
+				}
+				console.log('This product has been viewed ' + timedViewCounter + ' times, in the last 24 hours.');
 			    //console.log(data.counts[0].count);
 				//$("#viewer").html(response);
 		});
