@@ -1,20 +1,40 @@
+<style>
+	#hot-item {
+		text-align: center;
+		color: red;
+		margin-bottom: 10px;
+	}
+	#hot-item .view-count {
+		font-family: arial;
+		font-weight: 700;
+		font-size: inherit;
+	}
+</style>
 <script type="text/javascript">
 	//Product View Counter Function 
 	function prodViewCount() {
 
+		// Timestamp shim for browsers <IE8
 		if (!Date.now) {
 			Date.now = function() { return new Date().getTime(); }
 		}
 		
+		// Timestamp
 		var timestamp = Math.floor(Date.now());
+		// 24 hour old timestampt
 		var dayAgo = timestamp - 86400000;
 
+		// Record a hit to the count.io DB under DankStopProduct# group, as a timestmped hit of 1
         var productNumber = $('#productDetailsAddToCartForm').find('input[name=product_id]').attr('value');
 		$.ajax({
 			url:'http://count.io/vb/DankStopProduct' + productNumber + '/' + timestamp + '+',
 			type: 'POST'
 		});
+		
+		// Make dynamic HTTP prefix that depends on the prefi of the site's current page protocol
 		var httpPrefix = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+
+		// Retrieve current product array
 		$.post(
 			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
@@ -27,15 +47,21 @@
 				var timedViewCounter = 50;
 				var myStringArray = data.counts;
 				var arrayLength = myStringArray.length;
+				// Check each "timestamped hit" in the current product's array to see if it's older than 24 hours
 				for (var i = 0; i < arrayLength; i++) {
 					var itemTimestamp = data.counts[i].item;
+					// Count up all the product hits that are 24 hours old or newer
 					if (itemTimestamp > dayAgo) {
 						timedViewCounter++;
 					}
 				}
 				console.log('This product has been viewed ' + timedViewCounter + ' times, in the last 24 hours.');
-			    //console.log(data.counts[0].count);
-				//$("#viewer").html(response);
+				// If total count is greater than 100, then output HTML onto page
+				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> <br>' + 
+								'<span class="view-count">' + timedViewCounter + '</span> people have viewed this product in the last 24 hours.</div>';
+				if (timedViewCounter > 85) {
+					//$(".FreeShippingContainer").before(hotItem);
+				}
 		});
 	}
 	prodViewCount();
