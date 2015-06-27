@@ -37,7 +37,7 @@ BigCommerce Hot Item Product Counter
 - [jQuery AJAX cross domain](http://stackoverflow.com/questions/3506208/jquery-ajax-cross-domain)
 - [Loading cross domain html page with jQuery AJAX](http://stackoverflow.com/questions/15005500/loading-cross-domain-html-page-with-jquery-ajax/17299796#17299796)
 - [jQuery.ajaxPrefilter()](http://api.jquery.com/jquery.ajaxprefilter/)
-- []()
+- [Loop through array in JavaScript](http://stackoverflow.com/questions/3010840/loop-through-array-in-javascript)
 - []()
 - []()
 
