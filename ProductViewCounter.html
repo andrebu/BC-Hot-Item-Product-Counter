@@ -18,10 +18,12 @@
 		$.post(
 			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
+/*
 				console.log(data);
 				console.log(data.counts);
 				console.log(data.counts[0]);
 				console.log(data.counts[0].item);
+*/
 				var timedViewCounter = 50;
 				var myStringArray = data.counts;
 				var arrayLength = myStringArray.length;
@@ -30,8 +32,6 @@
 					if (itemTimestamp > dayAgo) {
 						timedViewCounter++;
 					}
-					//alert(myStringArray[i]);
-					//Do something
 				}
 				console.log('This product has been viewed ' + timedViewCounter + ' times, in the last 24 hours.');
 			    //console.log(data.counts[0].count);
