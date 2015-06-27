@@ -3,11 +3,17 @@
 		text-align: center;
 		color: red;
 		margin-bottom: 10px;
+		font-size: 10px;
+		line-height: 21px;
 	}
 	#hot-item .view-count {
-		font-family: arial;
+		color: #000;
 		font-weight: 700;
-		font-size: inherit;
+/*
+		font-family: futura;
+		font-size: 16px;
+		vertical-align: middle;
+*/
 	}
 </style>
 <script type="text/javascript">
@@ -38,12 +44,6 @@
 		$.post(
 			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
-/*
-				console.log(data);
-				console.log(data.counts);
-				console.log(data.counts[0]);
-				console.log(data.counts[0].item);
-*/
 				var timedViewCounter = 50;
 				var myStringArray = data.counts;
 				var arrayLength = myStringArray.length;
@@ -57,10 +57,10 @@
 				}
 				console.log('This product has been viewed ' + timedViewCounter + ' times, in the last 24 hours.');
 				// If total count is greater than 100, then output HTML onto page
-				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> <br>' + 
+				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> -- ' + 
 								'<span class="view-count">' + timedViewCounter + '</span> people have viewed this product in the last 24 hours.</div>';
 				if (timedViewCounter > 85) {
-					//$(".FreeShippingContainer").before(hotItem);
+					$(".FreeShippingContainer").before(hotItem);
 				}
 		});
 	}
