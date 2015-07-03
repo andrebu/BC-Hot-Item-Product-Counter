@@ -27,7 +27,7 @@
 		
 		// Timestamp
 		var timestamp = Math.floor(Date.now());
-		// 24 hour old timestampt
+		// 24 hour old timestamp
 		var dayAgo = timestamp - 86400000;
 
 		// Record a hit to the count.io DB under DankStopProduct# group, as a timestmped hit of 1
@@ -56,8 +56,8 @@
 					}
 				}
 				// If total count is greater than 100, then output HTML onto page
-				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> -- ' + 
-								'<span class="view-count">' + timedViewCounter + '</span> people have viewed this product in the last 24 hours.</div>';
+				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> - ' + 
+								'<span class="view-count">' + timedViewCounter + '</span> people have viewed this product in the last 24 hours</div>';
 				if (timedViewCounter > 85) {
 					$(".FreeShippingContainer").before(hotItem);
 				}
