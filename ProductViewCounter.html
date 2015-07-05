@@ -64,4 +64,55 @@
 		});
 	}
 	//prodViewCount();
+	
+	function gaStats() {
+/*
+		var myFeedUri = ['https://www.google.com/analytics/feeds/data',
+			'?start-date=2010-06-01',
+			'&end-date=2010-06-10',
+			'&dimensions=ga:day,ga:userType',
+			'&metrics=ga:sessions',
+			'&sort=ga:day',
+			'&max-results=20',
+			'&ids=ga:83694709'].join('');
+*/
+		var currentPage = window.location.pathname;
+		var gaDataUrl = 'https://ds24count.appspot.com/query?id=agtzfmRzMjRjb3VudHIVCxIIQXBpUXVlcnkYgICAgICAgAoM'
+		var gaData = ['https://www.googleapis.com/analytics/v3/data',
+			'/ga?ids=ga%3A83694709',
+			'&start-date=1daysAgo',
+			'&end-date=today',
+			'&metrics=ga%3Apageviews',
+			'&dimensions=ga%3ApagePath'].join('');
+		$.get( gaDataUrl, function( data ) {
+			console.log(currentPage);
+			console.log(data);
+			var result;
+			for( var i = 0, len = data.rows.length; i < len; i++ ) {
+				if( data.rows[i][0] === currentPage ) {
+					result = data.rows[i];
+					break;
+				}
+			}
+			console.log(result);
+			//$( ".result" ).html( data );
+		});
+
+	}
+	gaStats();
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
