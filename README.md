@@ -39,6 +39,15 @@ BigCommerce Hot Item Product Counter
 - [jQuery.ajaxPrefilter()](http://api.jquery.com/jquery.ajaxprefilter/)
 - [Loop through array in JavaScript](http://stackoverflow.com/questions/3010840/loop-through-array-in-javascript)
 - [StatCounter API - V3](http://api.statcounter.com/docs/v3)
+- [Search multi-dimensional array JavaScript](http://stackoverflow.com/questions/8809425/search-multi-dimensional-array-javascript)
+- [What's an easy way to get the url in the current window minus the domain name?](http://stackoverflow.com/questions/3955959/whats-an-easy-way-to-get-the-url-in-the-current-window-minus-the-domain-name)
+- [Query Explorer](https://ga-dev-tools.appspot.com/query-explorer/)
+- [Google Analytics API - Get page view information for specific URLs](http://stackoverflow.com/questions/19484009/google-analytics-api-get-page-view-information-for-specific-urls)
+- [Google Analytics superProxy](https://developers.google.com/analytics/solutions/google-analytics-super-proxy)
+- [Google API Access](https://code.google.com/apis/console/b/0/?noredirect#project:10703780028:access)
+- [Public URL](https://ds24count.appspot.com/query?id=agtzfmRzMjRjb3VudHIVCxIIQXBpUXVlcnkYgICAgICAgAoM)
+- [Google Analytics superProxy](https://github.com/googleanalytics/google-analytics-super-proxy#readme)
+- []()
 - []()
 
 
