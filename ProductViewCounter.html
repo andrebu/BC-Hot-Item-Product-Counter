@@ -44,6 +44,7 @@
 		$.post(
 			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
+				console.log(data);
 				var timedViewCounter = 50;
 				var myStringArray = data.counts;
 				var arrayLength = myStringArray.length;
@@ -55,6 +56,7 @@
 						timedViewCounter++;
 					}
 				}
+				console.log(timedViewCounter);
 				// If total count is greater than 100, then output HTML onto page
 				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> - ' + 
 								'<span class="view-count">' + timedViewCounter + '</span> people have viewed this product in the last 24 hours</div>';
@@ -62,20 +64,17 @@
 					$(".FreeShippingContainer").before(hotItem);
 				}
 		});
-	}
-	//prodViewCount();
-	
-	function gaStats() {
 /*
-		var myFeedUri = ['https://www.google.com/analytics/feeds/data',
-			'?start-date=2010-06-01',
-			'&end-date=2010-06-10',
-			'&dimensions=ga:day,ga:userType',
-			'&metrics=ga:sessions',
-			'&sort=ga:day',
-			'&max-results=20',
-			'&ids=ga:83694709'].join('');
+		$.post(
+			httpPrefix + '//count.io/vb/DankStopProduct' + productNumber,
+			function (data) {
+				console.log(data);
+		});
 */
+	}
+	prodViewCount();
+	
+	function getGaStats() {
 		var currentPage = window.location.pathname;
 		var gaDataUrl = 'https://ds24count.appspot.com/query?id=agtzfmRzMjRjb3VudHIVCxIIQXBpUXVlcnkYgICAgICAgAoM'
 		var gaData = ['https://www.googleapis.com/analytics/v3/data',
@@ -85,16 +84,16 @@
 			'&metrics=ga%3Apageviews',
 			'&dimensions=ga%3ApagePath'].join('');
 		$.get( gaDataUrl, function( data ) {
-			console.log(currentPage);
-			console.log(data);
-			var result;
+			//console.log(currentPage);
+			//console.log(data);
+			var viewCount;
 			for( var i = 0, len = data.rows.length; i < len; i++ ) {
 				if( data.rows[i][0] === currentPage ) {
-					result = data.rows[i][0];
-					console.log(data.rows[i]);
+					viewCount = data.rows[i][1];
+					//console.log(data.rows[i]);
+					//console.log(data.rows[i].split(','));
 					console.log(data.rows[i][0]);
 					console.log(data.rows[i][1]);
-					//console.log(data.rows[i].split(','));
 					break;
 				}
 			}
@@ -102,7 +101,7 @@
 		});
 
 	}
-	gaStats();
+	//getGaStats();
 </script>
 
 
