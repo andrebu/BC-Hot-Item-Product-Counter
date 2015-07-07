@@ -2,6 +2,7 @@
 	#hot-item {
 		text-align: center;
 		color: red;
+		margin-top: 30px;
 		margin-bottom: 10px;
 		font-size: 10px;
 		line-height: 21px;
@@ -44,7 +45,7 @@
 		$.post(
 			httpPrefix + '//cors-anywhere.herokuapp.com/' + 'http://count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
-				console.log(data);
+				//console.log(data);
 				var timedViewCounter = 50;
 				var myStringArray = data.counts;
 				var arrayLength = myStringArray.length;
@@ -52,11 +53,11 @@
 				for (var i = 0; i < arrayLength; i++) {
 					var itemTimestamp = data.counts[i].item;
 					// Count up all the product hits that are 24 hours old or newer
-					if (itemTimestamp > dayAgo) {
+					if (itemTimestamp >= dayAgo) {
 						timedViewCounter++;
 					}
 				}
-				console.log(timedViewCounter);
+				//console.log(timedViewCounter);
 				// If total count is greater than 100, then output HTML onto page
 				var hotItem = '<div id="hot-item"><strong><i class="fa fa-fire"></i> Hot Like Fire!</strong> - ' + 
 								'<span class="view-count">' + timedViewCounter + '</span> people have viewed this product in the last 24 hours</div>';
@@ -65,6 +66,7 @@
 				}
 		});
 /*
+		// Check if CORS works with count.io
 		$.post(
 			httpPrefix + '//count.io/vb/DankStopProduct' + productNumber,
 			function (data) {
