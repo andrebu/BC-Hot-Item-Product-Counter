@@ -96,45 +96,8 @@
 					$(".FreeShippingContainer").before(hotItem);
 				}
 		});
-/*
-		// Check if CORS works with count.io
-		$.post(
-			httpPrefix + '//count.io/vb/DankStopProduct' + productNumber,
-			function (data) {
-				console.log(data);
-		});
-*/
 	}
 	prodViewCount();
-	
-	function getGaStats() {
-		var currentPage = window.location.pathname;
-		var gaDataUrl = 'https://ds24count.appspot.com/query?id=agtzfmRzMjRjb3VudHIVCxIIQXBpUXVlcnkYgICAgICAgAoM'
-		var gaData = ['https://www.googleapis.com/analytics/v3/data',
-			'/ga?ids=ga%3A83694709',
-			'&start-date=1daysAgo',
-			'&end-date=today',
-			'&metrics=ga%3Apageviews',
-			'&dimensions=ga%3ApagePath'].join('');
-		$.get( gaDataUrl, function( data ) {
-			//console.log(currentPage);
-			//console.log(data);
-			var viewCount;
-			for( var i = 0, len = data.rows.length; i < len; i++ ) {
-				if( data.rows[i][0] === currentPage ) {
-					viewCount = data.rows[i][1];
-					//console.log(data.rows[i]);
-					//console.log(data.rows[i].split(','));
-					console.log(data.rows[i][0]);
-					console.log(data.rows[i][1]);
-					break;
-				}
-			}
-			//$( ".result" ).html( data );
-		});
-
-	}
-	//getGaStats();
 </script>
 
 
